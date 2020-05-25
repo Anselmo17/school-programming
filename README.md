@@ -1,4 +1,4 @@
-# lista-series
+# school-programming
 
 ## Project setup
 ```

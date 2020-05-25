@@ -1,0 +1,82 @@
+{
+    "school": {
+        "name": "Elevando seu conhecimento",
+        "typeSchool": "Cursos de Programação"
+    },
+    "login": [
+        {
+            "email": "fulano@gmail.com",
+            "password": "fulano1234"
+        }, {
+            "email": "leticiaQueiros@gmail.com",
+            "password": "teste38"
+        }, {
+            "email": "marciaSilva@hotmail.com",
+            "password": "marcia34"
+        }, {
+            "email": "joaofelipe@hotmail.com",
+            "password": "joao12"
+        }
+    ],
+    "login-success": [
+        {
+            "message": "Login efetuado com sucesso",
+            "token": "RTYOPECVB9900FHVNBM",
+            "user": {
+                "id": 1,
+                "name": "Fulano Nunes",
+                "email": "fulano@gmail.com"
+            }
+        }, {
+            "message": "Login efetuado com sucesso",
+            "token": "RTYOPECVB9900FHVNBM",
+            "user": {
+                "id": 2,
+                "name": "Leticia Queiros",
+                "email": "leticiaQueiros@gmail.com"
+            }
+        }, {
+            "message": "Login efetuado com sucesso",
+            "token": "RTYOPECVB9900FHVNBM",
+            "user": {
+                "id": 3,
+                "name": "Marcio Silva",
+                "email": "marciaSilva@hotmail.com"
+            }
+        }, {
+            "message": "Login efetuado com sucesso",
+            "token": "RTYOPECVB9900FHVNBM",
+            "user": {
+                "id": 4,
+                "name": "João Felipe",
+                "email": "joaofelipe@hotmail.com"
+            }
+        }
+    ],
+    "alunos": [
+        {
+            "id": 1,
+            "name": "Jonas Silva",
+            "curso": "Python"
+        },
+        {
+            "id": 2,
+            "name": "some comment",
+            "curso": "Angular"
+        },
+        {
+            "id": 3,
+            "name": "some comment",
+            "curso": "Angular"
+        },
+        {
+            "id": 4,
+            "name": "some comment",
+            "curso": "React"
+        }, {
+            "id": 5,
+            "name": "some comment",
+            "curso": "React"
+        }
+    ]
+}
