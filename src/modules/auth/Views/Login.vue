@@ -1,25 +1,37 @@
 <template>
-    <form @submit.prevent="submit()">
-       <div class="login-page">
+  <form @submit.prevent="submit()">
+    <div class="login-page">
       <div class="card">
         <div class="card-header">Login</div>
         <div class="card-body">
           <div class="form-group">
-            <input type="email" class="form-control" placeholder="Digite seu email" />
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Digite seu email"
+              v-model="form.email"
+            />
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" placeholder="Digite seu password" />
+            <input
+              type="password"
+              class="form-control"
+              v-model="form.password"
+              placeholder="Digite seu password"
+            />
           </div>
 
           <button class="btn btn-primary w-100">Entrar</button>
         </div>
       </div>
-      </div>
-    </form>
+    </div>
+  </form>
 </template>
 
 
 <script>
+//import {http} from '@/http';
+
 export default {
   data: () => ({
     form: {
@@ -29,6 +41,7 @@ export default {
   }),
   methods: {
     submit() {
+      // http.post('login', this.form)
       console.log(this.form);
     }
   }
