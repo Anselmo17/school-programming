@@ -1,11 +1,10 @@
-import * as actions from './action';
 import state from './state';
-import mutation from './mutation';
-
+import mutations from './mutations';
+import * as actions from './action';
 
 export default {
   state, 
   actions, 
-  mutation, 
+  mutations, 
   namespaced: true
 }

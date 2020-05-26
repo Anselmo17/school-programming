@@ -30,7 +30,7 @@
 
 
 <script>
-//import {http} from '@/http';
+import { mapActions } from "vuex";
 
 export default {
   data: () => ({
@@ -40,9 +40,16 @@ export default {
     }
   }),
   methods: {
+    ...mapActions("auth", ["ActionSetUser", "ActionDoLogin"]),
+
     submit() {
-      // http.post('login', this.form)
-      console.log(this.form);
+      this.ActionDoLogin(this.form)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
