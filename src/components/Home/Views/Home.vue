@@ -1,11 +1,11 @@
 <template>
   <div class="jumbotron">
 
-<h2 class="title">
-   <i class="material-icons md-36 align-generic">home</i>
-  Bem vindo a Home 
-</h2>
-<hr>
+    <h2 class="title">
+      <i class="material-icons md-36 align-generic">home</i>
+      Bem vindo a Home 
+    </h2>
+      <hr>
     <div class="row card-deck">
 
       <div class="card text-white bg-secondary card-home col-sm-4" >

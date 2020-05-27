@@ -1,37 +1,43 @@
 <template>
-  <form @submit.prevent="submit()">
-    <div class="login-page">
-      <div class="card">
-        <div class="card-header">
-          <i class="material-icons align-generic">account_circle</i>
-          <label>Login</label>
-        </div>
-        <div class="card-body">
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Digite seu email"
-              v-model="form.email"
-            />
+  <div class="">
+    <form @submit.prevent="submit()" >
+      <div class="login-page">
+        <div class="card ">
+          <div class="card-header">
+            <i class="material-icons align-generic">account_circle</i>
+            <label>Login</label>
           </div>
-          <div class="form-group">
-            <input
-              type="password"
-              class="form-control"
-              v-model="form.password"
-              placeholder="Digite seu password"
-            />
-          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label  for="email" class="d-flex justify-content-start">E-mail :</label>
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                placeholder="Digite seu email"
+                v-model="form.email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="senha" class="d-flex justify-content-start">Senha :</label>
+              <input
+                id="senha"
+                type="password"
+                class="form-control"
+                v-model="form.password"
+                placeholder="Digite seu password"
+              />
+            </div>
 
-          <button class="btn btn-primary w-100">
-            <i class="material-icons align-generic">school</i>
-            Entrar
-          </button>
+            <button class="btn btn-primary w-100">
+              <i class="material-icons align-generic">school</i>
+              Entrar
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </template>
 
 
@@ -88,8 +94,11 @@ export default {
 }
 
 .card {
-  width: 35%;
+  border: 5px solid;
+  width: 40%;
 }
 
-
+ .bg-login{
+   background: rgb(128, 124, 124);
+}
 </style>
