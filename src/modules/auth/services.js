@@ -5,6 +5,6 @@ export default {
     },
     userLogged: {
         method: 'get',
-        url: 'login-success{/:id}'
+        url: 'login-success'
     }
 }
