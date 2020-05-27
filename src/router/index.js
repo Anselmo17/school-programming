@@ -11,7 +11,7 @@ Vue.use(Router);
 
 // pass all routes
 const router = new Router({
-    // remove hash url
+    // remove hash url 
     mode:'history', 
 
     // all routes

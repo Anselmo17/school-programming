@@ -40,16 +40,32 @@ export default {
     }
   }),
   methods: {
-    ...mapActions("auth", ["ActionSetUser", "ActionDoLogin"]),
+    ...mapActions("auth", [
+      "ActionSetUser",
+      "ActionDoLogin",
+      "ActionUserLogged"
+    ]),
 
-    submit() {
-      this.ActionDoLogin(this.form)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+    async submit() {
+      let user = null;
+
+      try {
+        const res = await this.ActionDoLogin(this.form);
+
+        user = res.data.length > 0 ? res.data[0] : undefined;
+        if (!user) {
+          throw "Usuário nao existe";
+        }
+        const userLogado = await this.ActionUserLogged({ id: user.id });
+
+        console.log("Usuario : ", userLogado);
+
+        // reset fields
+        this.form.email = "";
+        this.form.password = "";
+      } catch (err) {
+        console.log("Houve um erro : ", err);
+      }
     }
   }
 };

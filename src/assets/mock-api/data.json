@@ -5,49 +5,53 @@
     },
     "login": [
         {
+            "id": 1,
             "email": "fulano@gmail.com",
             "password": "fulano1234"
         }, {
+            "id": 2,
             "email": "leticiaQueiros@gmail.com",
             "password": "teste38"
         }, {
+            "id": 3,
             "email": "marciaSilva@hotmail.com",
             "password": "marcia34"
         }, {
+            "id": 4,
             "email": "joaofelipe@hotmail.com",
             "password": "joao12"
         }
     ],
     "login-success": [
         {
+            "id": 1,
             "message": "Login efetuado com sucesso",
             "token": "RTYOPECVB9900FHVNBM",
             "user": {
-                "id": 1,
                 "name": "Fulano Nunes",
                 "email": "fulano@gmail.com"
             }
         }, {
+            "id": 2,
             "message": "Login efetuado com sucesso",
             "token": "RTYOPECVB9900FHVNBM",
             "user": {
-                "id": 2,
                 "name": "Leticia Queiros",
                 "email": "leticiaQueiros@gmail.com"
             }
         }, {
+            "id": 3,
             "message": "Login efetuado com sucesso",
             "token": "RTYOPECVB9900FHVNBM",
             "user": {
-                "id": 3,
                 "name": "Marcio Silva",
                 "email": "marciaSilva@hotmail.com"
             }
         }, {
+            "id": 4,
             "message": "Login efetuado com sucesso",
             "token": "RTYOPECVB9900FHVNBM",
             "user": {
-                "id": 4,
                 "name": "João Felipe",
                 "email": "joaofelipe@hotmail.com"
             }
