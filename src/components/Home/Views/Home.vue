@@ -3,19 +3,25 @@
 
     <h2 class="title">
       <i class="material-icons md-36 align-generic">home</i>
-      Bem vindo a Home 
+      Seja Bem vindo a Home 
     </h2>
       <hr>
     <div class="row card-deck">
 
       <div class="card text-white bg-secondary card-home col-sm-4" >
-        <h6 class="card-header title">Alunos</h6>  
+        <h6 class="card-header title">
+          Alunos
+        </h6>  
         <div class="card-body">
           <p class="card-text">
             Neste módulo temos diversas informações sobre os alunos matrículados na nossa 
             escola , e também temos diversos cursos dísponveis de acordo com a necessidade
             do aluno. 
           </p>
+
+          <button  class="btn btn-primary">
+             <router-link to="/alunos"  class="btn-home"> Entrar</router-link>
+          </button>
         </div>
       </div>
 
@@ -27,6 +33,10 @@
             funciona sua didática , quais cursos são ministrados por eles e como podemos 
             aproveitar dar melhor maneira possível.
           </p>
+
+          <button  class="btn btn-primary" disabled>
+             <router-link to="/#"  class="btn-home"> Entrar</router-link>
+          </button>
         </div>
       </div>
 
@@ -37,6 +47,10 @@
             Neste módulo falamos um pouco da escola e qual sua estrutura para ajudar os alunos a 
             evoluirem em suas carreiras , ou quem está começando por onde iniciar suas jornada.
           </p>
+
+          <button  class="btn btn-primary" disabled>
+             <router-link to="/#"  class="btn-home"> Entrar</router-link>
+          </button>
         </div>
       </div>
 
@@ -76,5 +90,12 @@ a {
   max-width: 22rem;
 }
 
+.btn-home{
+  text-decoration: none;
+  color: white;
+}
 
+.btn-home:hover{
+   cursor: pointer;
+}
 </style>

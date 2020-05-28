@@ -1,15 +1,15 @@
 <template>
-  <div class="">
-    <form @submit.prevent="submit()" >
+  <div class>
+    <form @submit.prevent="submit()">
       <div class="login-page">
-        <div class="card ">
+        <div class="card">
           <div class="card-header">
             <i class="material-icons align-generic">account_circle</i>
             <label>Login</label>
           </div>
           <div class="card-body">
             <div class="form-group">
-              <label  for="email" class="d-flex justify-content-start">E-mail :</label>
+              <label for="email" class="d-flex justify-content-start">E-mail :</label>
               <input
                 id="email"
                 type="email"
@@ -55,28 +55,45 @@ export default {
     ...mapActions("auth", [
       "ActionSetUser",
       "ActionDoLogin",
-      "ActionUserLogged"
+      "ActionUserLogged",
+      "ActionSetClear"
     ]),
 
+    created: () => {
+      this.ActionSetClear();
+    },
+
+    // submit login
     async submit() {
-      let user = null;
+      let userFind = null;
 
       try {
         const res = await this.ActionDoLogin(this.form);
 
-        user = res.data.length > 0 ? res.data[0] : undefined;
-        if (!user) {
+        userFind = res.data.length > 0 ? res.data[0] : undefined;
+
+        // validation user
+        if (!userFind) {
           throw "Usuário nao existe";
         }
-        const userLogado = await this.ActionUserLogged({ id: user.id });
 
-        console.log("Usuario : ", userLogado.data);
+        //data user login
+        const userLogado = await this.ActionUserLogged({ id: userFind.id });
+
+        const user = userLogado.data[0];
+
+        // adding data user localStorage
+        localStorage.setItem("user", JSON.stringify(user))
+        
+
+        // redirect for home
+        this.$router.push("home");
 
         // reset fields
         this.form.email = "";
         this.form.password = "";
       } catch (err) {
-        console.log("Houve um erro : ", err);
+        alert("Houve um erro : ", JSON.stringify(err));
       }
     }
   }
@@ -98,7 +115,7 @@ export default {
   width: 40%;
 }
 
- .bg-login{
-   background: rgb(128, 124, 124);
+.bg-login {
+  background: rgb(128, 124, 124);
 }
 </style>
