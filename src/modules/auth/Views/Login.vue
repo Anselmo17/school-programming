@@ -74,7 +74,7 @@ export default {
 
         // validation user
         if (!userFind) {
-          throw "Usuário nao existe";
+           throw "Usuário nao existe";
         }
 
         //data user login
@@ -83,8 +83,7 @@ export default {
         const user = userLogado.data[0];
 
         // adding data user localStorage
-        localStorage.setItem("user", JSON.stringify(user))
-        
+        localStorage.setItem("user", JSON.stringify(user));
 
         // redirect for home
         this.$router.push("home");
@@ -93,6 +92,11 @@ export default {
         this.form.email = "";
         this.form.password = "";
       } catch (err) {
+
+        // remove storage user
+         localStorage.removeItem("user");
+
+        //msg err 
         alert("Houve um erro : ", JSON.stringify(err));
       }
     }
