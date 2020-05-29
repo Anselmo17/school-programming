@@ -38,7 +38,7 @@
           </p>
 
           <button class="btn btn-primary" disabled>
-            <router-link to="/#" class="btn-home">unavailable</router-link>
+            <router-link to="" class="btn-home">unavailable</router-link>
           </button>
         </div>
       </div>
@@ -55,7 +55,7 @@
           </p>
 
           <button class="btn btn-primary" disabled>
-            <router-link to="/#" class="btn-home">unavailable</router-link>
+            <router-link to="" class="btn-home">unavailable</router-link>
           </button>
         </div>
       </div>

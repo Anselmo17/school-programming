@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import beforeEach from './beforeEach';
 
 // routers
 import routes from './routes';
@@ -17,5 +18,7 @@ const router = new Router({
     // all routes
     routes
 });
+
+router.beforeEach(beforeEach)
 
 export default router;

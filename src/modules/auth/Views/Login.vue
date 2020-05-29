@@ -101,8 +101,10 @@ export default {
         this.form.password = "";
 
       } catch (err) {
+        
         // remove storage user
         localStorage.removeItem("user");
+        localStorage.removeItem("token");
 
         //msg err
         this.err = true;

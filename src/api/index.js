@@ -14,9 +14,16 @@ Object.keys(services).map(service => {
 })
 
 
+// set token
+const setBearerToken = token => {
+    http.headers.common['Authorization'] = `Bearer ${token}`
+}
+
+
 // exports methods http
 export {
-    http
+    http,
+    setBearerToken
 };
 
 export default services;
