@@ -1,67 +1,74 @@
 <template>
   <div class="jumbotron">
-
     <h2 class="title">
-      <i class="material-icons md-36 align-generic">home</i>
-      Seja Bem vindo a Home 
+      <i class="material-icons md-24 align-generic">home</i>
+      Seja Bem vindo {{ userName }}
     </h2>
-      <hr>
+    <hr />
     <div class="row card-deck">
-
-      <div class="card text-white bg-secondary card-home col-sm-4" >
+      <div class="card text-white bg-secondary card-home col-sm-4">
         <h6 class="card-header title">
+          <i class="material-icons md-24 align-generic">people</i>
           Alunos
-        </h6>  
+        </h6>
         <div class="card-body">
           <p class="card-text">
-            Neste módulo temos diversas informações sobre os alunos matrículados na nossa 
+            Neste módulo temos diversas informações sobre os alunos matrículados na nossa
             escola , e também temos diversos cursos dísponveis de acordo com a necessidade
-            do aluno. 
+            do aluno.
           </p>
 
-          <button  class="btn btn-primary">
-             <router-link to="/alunos"  class="btn-home"> Enter</router-link>
+          <button class="btn btn-primary">
+            <i class="material-icons md-24 align-generic">input</i>
+            <router-link to="/alunos" class="btn-home space-btn">Enter</router-link>
           </button>
         </div>
       </div>
 
       <div class="card text-white bg-secondary card-home col-sm-4">
-        <h6 class="card-header title">Professores</h6>  
+        <h6 class="card-header title">
+          <i class="material-icons md-24 align-generic">local_library</i>
+          Professores
+        </h6>
         <div class="card-body">
           <p class="card-text">
-            Neste módulo temos diversas informações sobre os professores onde podemos saber como 
-            funciona sua didática , quais cursos são ministrados por eles e como podemos 
+            Neste módulo temos diversas informações sobre os professores onde podemos saber como
+            funciona sua didática , quais cursos são ministrados por eles e como podemos
             aproveitar dar melhor maneira possível.
           </p>
 
-          <button  class="btn btn-primary" disabled>
-             <router-link to="/#"  class="btn-home"> unavailable</router-link>
+          <button class="btn btn-primary" disabled>
+            <router-link to="/#" class="btn-home">unavailable</router-link>
           </button>
         </div>
       </div>
 
       <div class="card text-white bg-secondary card-home col-sm-4">
-        <h6 class="card-header title">Quem somos</h6>  
+        <h6 class="card-header title">
+          <i class="material-icons md-24 align-generic">assignment</i>
+          Quem somos
+        </h6>
         <div class="card-body">
           <p class="card-text">
-            Neste módulo falamos um pouco da escola e qual sua estrutura para ajudar os alunos a 
+            Neste módulo falamos um pouco da escola e qual sua estrutura para ajudar os alunos a
             evoluirem em suas carreiras , ou quem está começando por onde iniciar suas jornada.
           </p>
 
-          <button  class="btn btn-primary" disabled>
-             <router-link to="/#"  class="btn-home"> unavailable</router-link>
+          <button class="btn btn-primary" disabled>
+            <router-link to="/#" class="btn-home">unavailable</router-link>
           </button>
         </div>
       </div>
-
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data: () => ({
+    userName: JSON.parse(localStorage.getItem("user")).user.name || '.' ,
+  })
 };
 </script>
 
@@ -90,12 +97,16 @@ a {
   max-width: 22rem;
 }
 
-.btn-home{
+.btn-home {
   text-decoration: none;
   color: white;
 }
 
-.btn-home:hover{
-   cursor: pointer;
+.btn-home:hover {
+  cursor: pointer;
+}
+
+.space-btn {
+padding: .2em;
 }
 </style>
