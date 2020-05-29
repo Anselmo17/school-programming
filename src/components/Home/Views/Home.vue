@@ -32,9 +32,9 @@
         </h6>
         <div class="card-body">
           <p class="card-text">
-            Neste módulo temos diversas informações sobre os professores onde podemos saber como
-            funciona sua didática , quais cursos são ministrados por eles e como podemos
-            aproveitar dar melhor maneira possível.
+            Neste módulo temos diversas informações sobre os professores ,
+            onde podemos saber como funciona sua didática , quais cursos cada um deles
+            são especializados.
           </p>
 
           <button class="btn btn-primary" disabled>
@@ -66,9 +66,12 @@
 <script>
 export default {
   name: "Home",
+
+  // datas home
   data: () => ({
-    userName: JSON.parse(localStorage.getItem("user")).user.name || '.' ,
+    userName: JSON.parse(localStorage.getItem("user")).user.name || '' ,
   })
+
 };
 </script>
 
