@@ -1,5 +1,5 @@
 <template>
-  <div class>
+  <div>
     <form @submit.prevent="submit()">
       <div class="login-page">
         <div class="card">
@@ -29,10 +29,16 @@
               />
             </div>
 
+            <!-- mensagem de erro -->
+            <div class="form-group" v-if="err">
+                <span class="alert alert-danger form-control" role="alert">{{ msgErr }}</span>
+            </div>
+
             <button class="btn btn-primary w-100">
               <i class="material-icons align-generic">school</i>
               Entrar
             </button>
+
           </div>
         </div>
       </div>
@@ -49,7 +55,9 @@ export default {
     form: {
       email: "",
       password: ""
-    }
+    },
+    err: false,
+    msgErr: ""
   }),
   methods: {
     ...mapActions("auth", [
@@ -74,7 +82,7 @@ export default {
 
         // validation user
         if (!userFind) {
-           throw "Usuário nao existe";
+          throw "Usuário nao cadastrado";
         }
 
         //data user login
@@ -91,13 +99,20 @@ export default {
         // reset fields
         this.form.email = "";
         this.form.password = "";
+
       } catch (err) {
-
         // remove storage user
-         localStorage.removeItem("user");
+        localStorage.removeItem("user");
 
-        //msg err 
-        alert("Houve um erro : ", JSON.stringify(err));
+        //msg err
+        this.err = true;
+        this.msgErr = err;
+
+       // state init variables
+        setTimeout(() => {
+          this.err = false;
+          this.msgErr = "";
+        }, 6000);
       }
     }
   }
